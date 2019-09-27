@@ -1,4 +1,9 @@
-function hello(name) {
-  console.log("hello " + name);
+// var deepClone = require("./deep-clone");
+
+// exports.deepClone = deepClone;
+
+function geta() {
+  console.log("aaaaaaaaaaaaa");
 }
-exports.hello = hello;
+
+exports.geta = geta;
