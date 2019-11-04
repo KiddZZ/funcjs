@@ -12,7 +12,7 @@ const stringTag = "[object String]";
 const symbolTag = "[object Symbol]";
 
 const otherTags = [dateTag, errorTag, numberTag, stringTag];
-const deepTags = [mapTag, setTag, arrayTag, objectTag, argumentTag];
+const deepTags = [mapTag, setTag, arrayTag, objectTag];
 
 // 判断类型
 function getType(original) {
