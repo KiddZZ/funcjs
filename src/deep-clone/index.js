@@ -92,4 +92,4 @@ function deepClone(original, map = new WeakMap()) {
   }
 }
 
-exports.deepClone = deepClone;
+export default deepClone
