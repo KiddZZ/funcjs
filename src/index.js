@@ -1,3 +1,4 @@
 import deepClone from './deep-clone'
+import precision from './precision'
 
-export { deepClone }
+export { deepClone, precision }
