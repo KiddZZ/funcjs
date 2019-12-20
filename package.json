@@ -1,6 +1,6 @@
 {
   "name": "zb-fjs",
-  "version": "1.0.24",
+  "version": "1.0.25",
   "description": "工具项目",
   "main": "dist/index.js",
   "scripts": {

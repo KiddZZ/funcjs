@@ -45,8 +45,8 @@ precision(num, n)
 import { debounceAt, debounce, throttleAt, throttle } from 'zb-fjs'
 
 class a {
-  //参数number类型 延迟时间，默认300   throttleAt同
-  @debounceAt(500)
+  //参数number类型 延迟时间，默认300,第二参数boolean类型，第一次点击是否立即执行   throttleAt同
+  @debounceAt(500, true)
   click() {
     //click
   }
