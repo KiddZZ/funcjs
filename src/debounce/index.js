@@ -6,6 +6,7 @@
 const debounceAt = function(delay = 300, immediately) {
   return function(target, name, descriptor) {
     let timer = null
+    let isFirst = immediately
 
     // high order function
     if (!descriptor || (arguments.length === 1 && typeof target === 'function')) {
@@ -18,11 +19,19 @@ const debounceAt = function(delay = 300, immediately) {
         if (immediately) {
           fn.apply(this, arguments)
           immediately = false
-          return
+          isFirst = true
         }
-        timer = setTimeout(() => {
-          fn.apply(this, arguments)
-        }, delay)
+        if (isFirst) {
+          timer = setTimeout(() => {
+            isFirst = false
+            immediately = true
+          }, delay)
+        } else {
+          timer = setTimeout(() => {
+            immediately = false
+            fn.apply(this, arguments)
+          }, delay)
+        }
       }
     }
 
@@ -68,6 +77,7 @@ const throttleAt = function(delay = 300, immediately) {
       return createThrottle(target)
     }
     let canRun = true
+    let isFirst = immediately
 
     function createThrottle(fn) {
       return function throttle() {
@@ -75,13 +85,20 @@ const throttleAt = function(delay = 300, immediately) {
         if (immediately) {
           fn.apply(this, arguments)
           immediately = false
-          return
+          isFirst = true
         }
-        canRun = false
-        setTimeout(() => {
-          fn.apply(this, arguments)
-          canRun = true
-        }, delay)
+        if (isFirst) {
+          setTimeout(() => {
+            isFirst = false
+            immediately = true
+          }, delay)
+        } else {
+          canRun = false
+          setTimeout(() => {
+            fn.apply(this, arguments)
+            canRun = true
+          }, delay)
+        }
       }
     }
 
