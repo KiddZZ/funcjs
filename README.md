@@ -59,7 +59,7 @@ class a {
 
 ## objClearUndefined
 
-清除 object 中 不存在的项目
+清除 object 中 不存在的属性
 
 使用方法：
 
@@ -83,6 +83,7 @@ objClearUndefined(obj) // => { a: 123 }
 import { timeFormat } from 'zb-fjs'
 
 timeFormat(70) // => 1小时10分钟
+timeFormat(70, 'obj') // => { h:1,min:10 }
 ```
 
 ## dateFormat
@@ -93,6 +94,7 @@ timeFormat(70) // => 1小时10分钟
 import { dateFormat } from 'zb-fjs'
 
 dateFormat('1993-11-11T12:00:00', 'YYYY.MM.DD HH:mm:ss') // => 1993.11.11 12:00:00
+dateFormat('1993-11-11T12:00:00', 'YYYY-MM-DD HH:mm:ss') // => 1993-11-11 12:00:00
 ```
 
 ## moneyFormat
