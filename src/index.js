@@ -4,6 +4,7 @@ import { debounce, debounceAt, throttleAt, throttle } from './debounce'
 import objClearUndefined from './objClearUndefined'
 import { timeFormat, dateFormat, moneyFormat } from './format'
 import { lineClamp } from './canvas/lineClamp'
+import { sumArr } from './calculate'
 
 export {
   deepClone,
@@ -16,5 +17,6 @@ export {
   throttleAt,
   throttle,
   debounceAt,
-  lineClamp
+  lineClamp,
+  sumArr
 }

@@ -111,10 +111,21 @@ moneyFormat(230) // => { yuan:2, fen:30 }
 
 canvas 中文字的换行和限定行数
 
-接受context参数， text：渲染文字，x,y坐标，line行数，maxWidth：最大宽度，lineHeight: （文字高度+行间距）
+接受 context 参数， text：渲染文字，x,y 坐标，line 行数，maxWidth：最大宽度，lineHeight: （文字高度+行间距）
 
 ```js
 import { lineClamp } from 'zb-fjs'
 
 lineClamp(ctx, text, x, y, line, maxWidth, lineHeight)
+```
+
+## sumArr
+
+数组求和  
+将数组中的所有数字或者数字字符串相加，返回 number 类型
+
+```js
+import { sumArr } from 'zb-fjs'
+
+sumArr([1, 3, 4, 5, 6])
 ```
