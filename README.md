@@ -106,3 +106,15 @@ import { moneyFormat } from 'zb-fjs'
 
 moneyFormat(230) // => { yuan:2, fen:30 }
 ```
+
+## lineClamp
+
+canvas 中文字的换行和限定行数
+
+接受context参数， text：渲染文字，x,y坐标，line行数，maxWidth：最大宽度，lineHeight: （文字高度+行间距）
+
+```js
+import { lineClamp } from 'zb-fjs'
+
+lineClamp(ctx, text, x, y, line, maxWidth, lineHeight)
+```

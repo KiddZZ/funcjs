@@ -3,6 +3,7 @@ import precision from './precision'
 import { debounce, debounceAt, throttleAt, throttle } from './debounce'
 import objClearUndefined from './objClearUndefined'
 import { timeFormat, dateFormat, moneyFormat } from './format'
+import { lineClamp } from './canvas/lineClamp'
 
 export {
   deepClone,
@@ -14,5 +15,6 @@ export {
   moneyFormat,
   throttleAt,
   throttle,
-  debounceAt
+  debounceAt,
+  lineClamp
 }
