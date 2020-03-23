@@ -151,3 +151,23 @@ arrEquar([1, 2], [1, 2])
 arrEquar([1, 1], [1, 2])
 arrEquar([1, 2, { a: '12' }], [1, 2, { a: '12' }])
 ```
+
+## objArrRepeat
+
+对象数组根据 key 去重
+
+```js
+import { objArrRepeat } from 'zb-fjs'
+
+objArrRepeat([{ name: '1' }, { name: '2' }, { name: '1' }], 'name')
+```
+
+## getQuery
+
+获取 url 上的 query 参数
+
+```js
+import { getQuery } from 'zb-fjs'
+
+getQuery('name')
+```
