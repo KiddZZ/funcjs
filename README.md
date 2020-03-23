@@ -129,3 +129,25 @@ import { sumArr } from 'zb-fjs'
 
 sumArr([1, 3, 4, 5, 6])
 ```
+
+## objEquar
+
+对象是否相等
+
+```js
+import { objEquar } from 'zb-fjs'
+
+objEquar({a: '123',b: {c:'aaa',d: [1,2]},{a:'123',b: {c:'aaa',d: [1,2]}}})
+```
+
+## arrEquar
+
+数组是否相等
+
+```js
+import { arrEquar } from 'zb-fjs'
+
+arrEquar([1, 2], [1, 2])
+arrEquar([1, 1], [1, 2])
+arrEquar([1, 2, { a: '12' }], [1, 2, { a: '12' }])
+```
