@@ -31,6 +31,11 @@ function initCopy(original: any) {
   return new Ctor()
 }
 
+/**
+ * 深拷贝
+ * @param original 
+ * @param map 
+ */
 function deepClone(original: any, map = new WeakMap()) {
   const type = getType(original)
 

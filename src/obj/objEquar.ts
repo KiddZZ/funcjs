@@ -1,6 +1,10 @@
 import { arrEquar } from '../array/arrEquar'
 
-// 判断对象相等
+/**
+ * 判断两个对象是否相等
+ * @param x obj1
+ * @param y obj2
+ */
 export const objEquar = (x: any, y: any) => {
   if (x === y) {
     return true

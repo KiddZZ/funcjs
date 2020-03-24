@@ -56,7 +56,6 @@ export function dateFormat(date = '', fmt: string) {
  * 将分为单位的金钱格式化为：元+分
  * @param money 接受一个数字，单位分
  */
-
 export function moneyFormat(money: number) {
   if (!(money === +money)) {
     console.warn('money不是一个数字')

@@ -1,6 +1,10 @@
 import { objEquar } from '../obj/objEquar'
 
-// 判断数组是否相同
+/**
+ * 判断两个数组是否相同
+ * @param a 数组1
+ * @param b 数组2
+ */
 export function arrEquar(a: any[], b: any[]) {
   if (!Array.isArray(a) || !Array.isArray(b)) {
     return false
