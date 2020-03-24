@@ -1,4 +1,4 @@
-export function getQueryString(name) {
+export default function getQueryString(name: string): string | null {
   let reg = new RegExp('(^|&)' + name + '=([^&]*)(&|$)', 'i')
   const search = window.location.href.substr(window.location.href.indexOf('?'))
   let r = search.substr(1).match(reg)

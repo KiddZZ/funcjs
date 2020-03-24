@@ -13,7 +13,7 @@ import { timeFormat, dateFormat, moneyFormat } from './format'
 // canvas换行
 import { lineClamp } from './canvas/lineClamp'
 // 数组求和
-import { sumArr } from './array/calculate'
+import { sumArr } from './array/calculate/sumArr'
 // 数组相等
 import { arrEquar } from './array/arrEquar'
 // 对象数组根据key去重

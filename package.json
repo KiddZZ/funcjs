@@ -1,11 +1,11 @@
 {
   "name": "zb-fjs",
-  "version": "1.0.30",
+  "version": "1.1.0",
   "description": "工具项目",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config ./webpack.config.js",
+    "build": "tsc",
     "prepublishOnly": "npm run build"
   },
   "repository": {
@@ -19,7 +19,6 @@
   },
   "homepage": "https://github.com/KiddZZ/zb-fjs#readme",
   "devDependencies": {
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "typescript": "^3.8.3"
   }
 }

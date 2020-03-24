@@ -1,10 +1,18 @@
-export const lineClamp = (ctx, text = '', x, y, line, maxWidth, lineHeight) => {
+export const lineClamp = (
+  ctx: CanvasRenderingContext2D,
+  text = '',
+  x: number,
+  y: number,
+  line: number,
+  maxWidth: number,
+  lineHeight: number
+) => {
   // 首先将text转换为数组
   if (typeof text != 'string' || typeof x != 'number' || typeof y != 'number') {
     return
   }
   const arrText = text.split('')
-  let lineArr = []
+  let lineArr: any[] = []
   let lineIndex = 0
   let isMore = false
   arrText.forEach(txt => {

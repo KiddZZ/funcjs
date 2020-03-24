@@ -3,9 +3,9 @@
  * @param delay 延迟时间
  * @param immediately 是否立即执行(会先执行一次，再进入定时器模式)
  */
-const debounceAt = function(delay = 300, immediately) {
-  return function(target, name, descriptor) {
-    let timer = null
+const debounceAt = function(delay = 300, immediately: boolean) {
+  return function(target: any, name: string, descriptor: any) {
+    let timer: any = null
     let isFirst = immediately
 
     // high order function
@@ -13,7 +13,7 @@ const debounceAt = function(delay = 300, immediately) {
       return createDebounce(target)
     }
 
-    function createDebounce(fn) {
+    function createDebounce(fn: Function) {
       return function debounce() {
         clearTimeout(timer)
         if (immediately) {
@@ -55,8 +55,8 @@ const debounceAt = function(delay = 300, immediately) {
  * @param fn 需要调用的function
  * @param {number} delay 延迟的时间
  */
-const debounce = (fn, delay = 300) => {
-  let timer = null
+const debounce = (fn: Function, delay = 300) => {
+  let timer: any = null
   return function() {
     clearTimeout(timer)
     timer = setTimeout(() => {
@@ -70,8 +70,8 @@ const debounce = (fn, delay = 300) => {
  * @param {number} delay 延迟时间
  * @param immediately 是否立即执行
  */
-const throttleAt = function(delay = 300, immediately) {
-  return function(target, name, descriptor) {
+const throttleAt = function(delay = 300, immediately: boolean) {
+  return function(target: any, name: string, descriptor: any) {
     // high order function
     if (!descriptor || (arguments.length === 1 && typeof target === 'function')) {
       return createThrottle(target)
@@ -79,7 +79,7 @@ const throttleAt = function(delay = 300, immediately) {
     let canRun = true
     let isFirst = immediately
 
-    function createThrottle(fn) {
+    function createThrottle(fn: Function) {
       return function throttle() {
         if (!canRun) return
         if (immediately) {
@@ -122,7 +122,7 @@ const throttleAt = function(delay = 300, immediately) {
  * @param fn 需要调用的function
  * @param {number} delay 延迟的时间默认300
  */
-const throttle = (fn, delay = 300) => {
+const throttle = (fn: Function, delay = 300) => {
   let canRun = true // 通过闭包保存一个标记
   return function() {
     if (!canRun) return // 在函数开头判断标记是否为true，不为true则return

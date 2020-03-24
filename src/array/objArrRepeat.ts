@@ -3,8 +3,8 @@
  * @param {object} arr
  * @param {string} key
  */
-export function objArrRepeat(arr, key) {
-  var hash = {}
+export function objArrRepeat(arr: any[], key: string) {
+  var hash: any = {}
   const objArray = arr.reduce(function(item, next) {
     if (!hash[next[key]]) {
       hash[next[key]] = true && item.push(next)

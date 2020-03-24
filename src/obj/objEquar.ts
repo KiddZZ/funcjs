@@ -1,13 +1,13 @@
 import { arrEquar } from '../array/arrEquar'
 
 // 判断对象相等
-export const objEquar = (x, y) => {
+export const objEquar = (x: any, y: any) => {
   if (x === y) {
     return true
   }
   if (
-    !Object.prototype.toString.call(x) === '[object Object]' ||
-    !Object.prototype.toString.call(y) === '[object Object]'
+    !(Object.prototype.toString.call(x) === '[object Object]') ||
+    !(Object.prototype.toString.call(y) === '[object Object]')
   ) {
     return false
   }

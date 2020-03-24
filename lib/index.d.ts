@@ -1,0 +1,12 @@
+import deepClone from './deep-clone';
+import precision from './precision';
+import { debounce, debounceAt, throttleAt, throttle } from './debounce';
+import objClearUndefined from './objClearUndefined';
+import getQuery from './getQuery/getQuery';
+import { timeFormat, dateFormat, moneyFormat } from './format';
+import { lineClamp } from './canvas/lineClamp';
+import { sumArr } from './array/calculate/sumArr';
+import { arrEquar } from './array/arrEquar';
+import { objArrRepeat } from './array/objArrRepeat';
+import { objEquar } from './obj/objEquar';
+export { deepClone, precision, debounce, objClearUndefined, timeFormat, dateFormat, moneyFormat, throttleAt, throttle, debounceAt, lineClamp, sumArr, arrEquar, objEquar, objArrRepeat, getQuery };

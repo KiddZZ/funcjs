@@ -2,7 +2,7 @@
  * 时间格式化  分->时+分
  * @param time 单位：分
  */
-export function timeFormat(time, type) {
+export function timeFormat(time: number, type: string) {
   if (!time) {
     return time
   }
@@ -25,14 +25,14 @@ export function timeFormat(time, type) {
  * @param date 日期
  * @param format 格式
  */
-export function dateFormat(date = '', fmt) {
+export function dateFormat(date = '', fmt: string) {
   let newDate
   if (!date) {
     newDate = new Date()
   } else {
     newDate = new Date(date.replace(/\-/g, '/'))
   }
-  const o = {
+  const o: any = {
     'M+': newDate.getMonth() + 1, // 月份
     'D+': newDate.getDate(), // 日
     'H+': newDate.getHours(), // 小时
@@ -57,13 +57,13 @@ export function dateFormat(date = '', fmt) {
  * @param money 接受一个数字，单位分
  */
 
-export function moneyFormat(money) {
+export function moneyFormat(money: number) {
   if (!(money === +money)) {
     console.warn('money不是一个数字')
     return {}
   }
   const yuan = Math.floor(money / 100)
-  let fen = Math.floor(money % 100)
+  let fen: string | number = Math.floor(money % 100)
   fen = fen < 10 ? '0' + fen : fen
   return { yuan, fen }
 }

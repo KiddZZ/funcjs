@@ -1,7 +1,7 @@
 import { objEquar } from '../obj/objEquar'
 
 // 判断数组是否相同
-export function arrEquar(a, b) {
+export function arrEquar(a: any[], b: any[]) {
   if (!Array.isArray(a) || !Array.isArray(b)) {
     return false
   } else if (a.length !== b.length) {
