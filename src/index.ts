@@ -13,7 +13,9 @@ import { timeFormat, dateFormat, moneyFormat } from './format'
 // canvas换行
 import { lineClamp } from './canvas/lineClamp'
 // 数组求和
-import { sumArr } from './array/calculate/sumArr'
+import { sumArr, sumObjArr } from './array/calculate/sumArr'
+// 数组扁平化
+import { flat } from './array/flat'
 // 数组相等
 import { arrEquar } from './array/arrEquar'
 // 对象数组根据key去重
@@ -34,8 +36,10 @@ export {
   debounceAt,
   lineClamp,
   sumArr,
+  sumObjArr,
   arrEquar,
   objEquar,
   objArrRepeat,
-  getQuery
+  getQuery,
+  flat
 }

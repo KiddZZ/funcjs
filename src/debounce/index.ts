@@ -14,10 +14,10 @@ const debounceAt = function(delay = 300, immediately: boolean) {
     }
 
     function createDebounce(fn: Function) {
-      return function debounce() {
+      return function debounce(...rest) {
         clearTimeout(timer)
         if (immediately) {
-          fn.apply(this, arguments)
+          fn.apply(this, rest)
           immediately = false
           isFirst = true
         }
@@ -29,7 +29,7 @@ const debounceAt = function(delay = 300, immediately: boolean) {
         } else {
           timer = setTimeout(() => {
             immediately = false
-            fn.apply(this, arguments)
+            fn.apply(this, rest)
           }, delay)
         }
       }
@@ -57,10 +57,10 @@ const debounceAt = function(delay = 300, immediately: boolean) {
  */
 const debounce = (fn: Function, delay = 300) => {
   let timer: any = null
-  return function() {
+  return function(...rest) {
     clearTimeout(timer)
     timer = setTimeout(() => {
-      fn(this, arguments)
+      fn(this, rest)
     }, delay)
   }
 }
@@ -80,10 +80,10 @@ const throttleAt = function(delay = 300, immediately: boolean) {
     let isFirst = immediately
 
     function createThrottle(fn: Function) {
-      return function throttle() {
+      return function throttle(...rest) {
         if (!canRun) return
         if (immediately) {
-          fn.apply(this, arguments)
+          fn.apply(this, rest)
           immediately = false
           isFirst = true
         }
@@ -95,7 +95,7 @@ const throttleAt = function(delay = 300, immediately: boolean) {
         } else {
           canRun = false
           setTimeout(() => {
-            fn.apply(this, arguments)
+            fn.apply(this, rest)
             canRun = true
           }, delay)
         }
@@ -124,12 +124,12 @@ const throttleAt = function(delay = 300, immediately: boolean) {
  */
 const throttle = (fn: Function, delay = 300) => {
   let canRun = true // 通过闭包保存一个标记
-  return function() {
+  return function(...rest) {
     if (!canRun) return // 在函数开头判断标记是否为true，不为true则return
     canRun = false // 立即设置为false
     setTimeout(() => {
       // 将外部传入的函数的执行放在setTimeout中
-      fn.apply(this, arguments)
+      fn.apply(this, rest)
       // 最后在setTimeout执行完毕后再把标记设置为true(关键)表示可以执行下一次循环了。当定时器没有执行的时候标记永远是false，在开头被return掉
       canRun = true
     }, delay)

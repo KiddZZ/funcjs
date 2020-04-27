@@ -125,9 +125,10 @@ lineClamp(ctx, text, x, y, line, maxWidth, lineHeight)
 将数组中的所有数字或者数字字符串相加，返回 number 类型
 
 ```js
-import { sumArr } from 'zb-fjs'
+import { sumArr, sumObjArr } from 'zb-fjs'
 
-sumArr([1, 3, 4, 5, 6])
+sumArr([1, 3, 4, 5, 6]) // 19
+sumObjArr([{ a: 1 }, { a: 2 }, { a: 3 }], 'a') // 6
 ```
 
 ## objEquar
@@ -170,4 +171,14 @@ objArrRepeat([{ name: '1' }, { name: '2' }, { name: '1' }], 'name')
 import { getQuery } from 'zb-fjs'
 
 getQuery('name')
+```
+
+## flat
+
+数组扁平化, 接受参数 1 数组， 2：拍平层级，默认展开所有
+
+```js
+import { flat } from 'zb-fjs'
+
+flat(arr, 1)
 ```

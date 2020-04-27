@@ -9,7 +9,7 @@ declare const debounceAt: (delay: number, immediately: boolean) => (target: any,
  * @param fn 需要调用的function
  * @param {number} delay 延迟的时间
  */
-declare const debounce: (fn: Function, delay?: number) => () => void;
+declare const debounce: (fn: Function, delay?: number) => (...rest: any[]) => void;
 /**
  * 装饰器版节流
  * @param {number} delay 延迟时间
@@ -21,5 +21,5 @@ declare const throttleAt: (delay: number, immediately: boolean) => (target: any,
  * @param fn 需要调用的function
  * @param {number} delay 延迟的时间默认300
  */
-declare const throttle: (fn: Function, delay?: number) => () => void;
+declare const throttle: (fn: Function, delay?: number) => (...rest: any[]) => void;
 export { debounceAt, debounce, throttleAt, throttle };
