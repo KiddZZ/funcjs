@@ -3,7 +3,7 @@
  * @param delay 延迟时间
  * @param immediately 是否立即执行(会先执行一次，再进入定时器模式)
  */
-declare const debounceAt: (delay: number, immediately: boolean) => (target: any, name: string, descriptor: any) => any;
+declare const debounceAt: (delay?: number, immediately?: boolean) => (target: any, name?: string, descriptor?: any) => any;
 /**
  * 防抖
  * @param fn 需要调用的function

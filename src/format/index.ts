@@ -25,12 +25,18 @@ export function timeFormat(time: number, type: string) {
  * @param date 日期
  * @param format 格式
  */
-export function dateFormat(date = '', fmt: string) {
+export function dateFormat(date, fmt: string) {
   let newDate
   if (!date) {
     newDate = new Date()
-  } else {
+  } else if (Object.prototype.toString.call(date) === '[object Date]') {
+    newDate = date
+  } else if (Object.prototype.toString.call(date) === '[object Number]') {
+    newDate = new Date(date)
+  } else if (Object.prototype.toString.call(date) === '[object String]') {
     newDate = new Date(date.replace(/\-/g, '/'))
+  } else {
+    throw new Error('时间解析失败')
   }
   const o: any = {
     'M+': newDate.getMonth() + 1, // 月份
@@ -65,4 +71,54 @@ export function moneyFormat(money: number) {
   let fen: string | number = Math.floor(money % 100)
   fen = fen < 10 ? '0' + fen : fen
   return { yuan, fen }
+}
+
+/**
+ * 获取倒计时
+ * @param time 接受一个时间
+ * @param type 默认时分秒  1-天时分秒
+ */
+export function getCountDown(time, type = null) {
+  let newDate
+  if (!time) {
+    return null
+  }
+  try {
+    if (Object.prototype.toString.call(time) === '[object Date]') {
+      newDate = time.getTime()
+    } else if (Object.prototype.toString.call(time) === '[object Number]') {
+      newDate = new Date(time).getTime()
+    } else if (Object.prototype.toString.call(time) === '[object String]') {
+      newDate = new Date(time.replace(/\-/g, '/')).getTime()
+    } else {
+      return null
+    }
+  } catch (err) {
+    throw new Error('时间解析失败')
+  }
+  const now = new Date().getTime()
+  if (newDate < now) {
+    console.warn('时间已超过当前时间')
+    return false
+  }
+  const diff_time = (newDate - now) / 1000
+  let h = Math.floor(diff_time / 3600)
+  let m = Math.floor((diff_time / 60) % 60)
+  let s = Math.floor(diff_time % 60)
+  if (!type) {
+    return {
+      h,
+      m,
+      s
+    }
+  } else {
+    let d = Math.floor(h / 24)
+    h = h % 24
+    return {
+      d,
+      h,
+      m,
+      s
+    }
+  }
 }

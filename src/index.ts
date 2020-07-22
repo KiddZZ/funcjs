@@ -9,7 +9,7 @@ import objClearUndefined from './objClearUndefined'
 // 获取url中的参数
 import getQuery from './getQuery/getQuery'
 // 各种format
-import { timeFormat, dateFormat, moneyFormat } from './format'
+import { timeFormat, dateFormat, moneyFormat, getCountDown } from './format'
 // canvas换行
 import { lineClamp } from './canvas/lineClamp'
 // 数组求和
@@ -31,6 +31,7 @@ export {
   timeFormat,
   dateFormat,
   moneyFormat,
+  getCountDown,
   throttleAt,
   throttle,
   debounceAt,

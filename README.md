@@ -182,3 +182,11 @@ import { flat } from 'zb-fjs'
 
 flat(arr, 1)
 ```
+
+## getCountDown 倒计时
+1.1.5
+```js
+import { getCountDown } from 'zb-fjs'
+
+getCountDown('2020-6-12 11:00:00')
+```

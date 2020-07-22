@@ -11,7 +11,7 @@ export declare function timeFormat(time: number, type: string): string | number 
  * @param date 日期
  * @param format 格式
  */
-export declare function dateFormat(date: string, fmt: string): string;
+export declare function dateFormat(date: any, fmt: string): string;
 /**
  * 将分为单位的金钱格式化为：元+分
  * @param money 接受一个数字，单位分
@@ -22,4 +22,20 @@ export declare function moneyFormat(money: number): {
 } | {
     yuan: number;
     fen: string | number;
+};
+/**
+ * 获取倒计时
+ * @param time 接受一个时间
+ * @param type 默认时分秒  1-天时分秒
+ */
+export declare function getCountDown(time: any, type?: any): false | {
+    h: number;
+    m: number;
+    s: number;
+    d?: undefined;
+} | {
+    d: number;
+    h: number;
+    m: number;
+    s: number;
 };

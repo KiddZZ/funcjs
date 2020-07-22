@@ -3,8 +3,8 @@
  * @param delay 延迟时间
  * @param immediately 是否立即执行(会先执行一次，再进入定时器模式)
  */
-const debounceAt = function(delay = 300, immediately: boolean) {
-  return function(target: any, name: string, descriptor: any) {
+const debounceAt = function(delay = 300, immediately: boolean = true) {
+  return function(target: any, name?: string, descriptor?: any) {
     let timer: any = null
     let isFirst = immediately
 
