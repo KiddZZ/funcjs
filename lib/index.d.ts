@@ -10,4 +10,5 @@ import { flat } from './array/flat';
 import { arrEquar } from './array/arrEquar';
 import { objArrRepeat } from './array/objArrRepeat';
 import { objEquar } from './obj/objEquar';
-export { deepClone, precision, debounce, objClearUndefined, timeFormat, dateFormat, moneyFormat, getCountDown, throttleAt, throttle, debounceAt, lineClamp, sumArr, sumObjArr, arrEquar, objEquar, objArrRepeat, getQuery, flat };
+import { base64Encode, base64Decode } from './base64';
+export { deepClone, precision, debounce, objClearUndefined, timeFormat, dateFormat, moneyFormat, getCountDown, throttleAt, throttle, debounceAt, lineClamp, sumArr, sumObjArr, arrEquar, objEquar, objArrRepeat, getQuery, flat, base64Encode, base64Decode };

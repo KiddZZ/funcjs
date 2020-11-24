@@ -190,3 +190,12 @@ import { getCountDown } from 'zb-fjs'
 
 getCountDown('2020-6-12 11:00:00')
 ```
+
+## base64Encode base64Decode base64加密、解密
+1.1.8
+```js
+import { base64Encode, base64Decode } from 'zb-fjs'
+
+base64Encode('123')
+base64Decode('MTIz')
+```

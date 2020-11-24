@@ -22,6 +22,8 @@ import { arrEquar } from './array/arrEquar'
 import { objArrRepeat } from './array/objArrRepeat'
 // 对象相等
 import { objEquar } from './obj/objEquar'
+// base64加密解码
+import { base64Encode, base64Decode } from './base64'
 
 export {
   deepClone,
@@ -42,5 +44,7 @@ export {
   objEquar,
   objArrRepeat,
   getQuery,
-  flat
+  flat,
+  base64Encode,
+  base64Decode
 }
