@@ -26,16 +26,6 @@ export declare function moneyFormat(money: number): {
 /**
  * 获取倒计时
  * @param time 接受一个时间
- * @param type 默认时分秒  1-天时分秒
+ * @param type 默认时分秒  'day'-天时分秒 'format'-'加0的时分秒'  'dayformat'-'加0的天时分秒'
  */
-export declare function getCountDown(time: any, type?: any): false | {
-    h: number;
-    m: number;
-    s: number;
-    d?: undefined;
-} | {
-    d: number;
-    h: number;
-    m: number;
-    s: number;
-};
+export declare function getCountDown(time: any, type?: any): any;

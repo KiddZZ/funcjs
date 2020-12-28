@@ -188,7 +188,7 @@ flat(arr, 1)
 ```js
 import { getCountDown } from 'zb-fjs'
 
-getCountDown('2020-6-12 11:00:00')
+getCountDown('2020-6-12 11:00:00', 'format')
 ```
 
 ## base64Encode base64Decode base64加密、解密

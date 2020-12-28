@@ -14,7 +14,7 @@ export function timeFormat(time: number, type: string) {
     } else {
       return {
         h: Math.floor(time / 60),
-        min: time % 60
+        min: time % 60,
       }
     }
   }
@@ -45,7 +45,7 @@ export function dateFormat(date, fmt: string) {
     'm+': newDate.getMinutes(), // 分
     's+': newDate.getSeconds(), // 秒
     'q+': Math.floor((newDate.getMonth() + 3) / 3), // 季度
-    'S+': newDate.getMilliseconds() // 毫秒
+    'S+': newDate.getMilliseconds(), // 毫秒
   }
   if (/(Y+)/.test(fmt)) {
     fmt = fmt.replace(RegExp.$1, (newDate.getFullYear() + '').substr(4 - RegExp.$1.length))
@@ -76,7 +76,7 @@ export function moneyFormat(money: number) {
 /**
  * 获取倒计时
  * @param time 接受一个时间
- * @param type 默认时分秒  1-天时分秒
+ * @param type 默认时分秒  'day'-天时分秒 'format'-'加0的时分秒'  'dayformat'-'加0的天时分秒'
  */
 export function getCountDown(time, type = null) {
   let newDate
@@ -105,20 +105,28 @@ export function getCountDown(time, type = null) {
   let h = Math.floor(diff_time / 3600)
   let m = Math.floor((diff_time / 60) % 60)
   let s = Math.floor(diff_time % 60)
+
+  const date = { h, m, s }
+  let d = Math.floor(h / 24)
+  const dayDate = { d, h: h % 24, m, s }
   if (!type) {
-    return {
-      h,
-      m,
-      s
-    }
+    return date
+  } else if (type === 'format') {
+    return countdownFormat(date)
+  } else if (type === 'dayformat') {
+    return countdownFormat(dayDate)
   } else {
-    let d = Math.floor(h / 24)
-    h = h % 24
-    return {
-      d,
-      h,
-      m,
-      s
-    }
+    return dayDate
   }
+}
+
+function countdownFormat(date) {
+  return date
+    ? {
+        ...date,
+        h: date.h < 10 ? '0' + date.h : date.h,
+        m: date.m < 10 ? '0' + date.m : date.m,
+        s: date.s < 10 ? '0' + date.s : date.s,
+      }
+    : false
 }
